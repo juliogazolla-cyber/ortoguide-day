@@ -144,6 +144,11 @@ section{padding:96px 0}
 .dep .play{position:absolute;inset:0;display:grid;place-items:center}
 .dep .play i{width:48px;height:48px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
 .dep .play svg{width:18px;height:18px;color:var(--accent-ink);margin-left:3px}
+.dep{cursor:pointer;padding:0;background:none;width:100%}
+.player{position:fixed;inset:0;z-index:100;background:rgba(5,8,11,.92);display:none;align-items:center;justify-content:center;padding:16px}
+.player.open{display:flex}
+.player video{width:100%;max-width:1100px;max-height:86vh;border-radius:12px;background:#000}
+.player .fechar{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--ink-2);color:var(--text);font-size:26px;line-height:1;cursor:pointer}
 
 /* por que janeiro */
 .janeiro .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -395,6 +400,11 @@ footer a:hover{color:var(--text)}
   </div>
 </section>
 
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Depoimento em vídeo">
+  <button class="fechar" id="fecharPlayer" aria-label="Fechar vídeo">&times;</button>
+  <video id="playerVideo" controls playsinline preload="none"></video>
+</div>
+
 <section class="janeiro" style="background:var(--ink-2)">
   <div class="wrap grid">
     <div>
@@ -523,13 +533,30 @@ document.querySelectorAll('.wa').forEach(function(a){
   a.target = '_blank'; a.rel = 'noopener';
 });
 
-// depoimentos (capas dos vídeos do Summit; trocar o link por YouTube/Vimeo quando subir os vídeos)
-var ALBUM = 'https://photos.app.goo.gl/Csadt7LHWVsXv86L6';
+// depoimentos: os vídeos ficam em video/depN.mp4 e abrem num player por cima da página
 var g = document.getElementById('depGrid');
+var player = document.getElementById('player');
+var pv = document.getElementById('playerVideo');
+function abrir(i){
+  pv.poster = 'img/dep' + i + '.jpg';
+  pv.src = 'video/dep' + i + '.mp4';
+  player.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  pv.play().catch(function(){});
+}
+function fechar(){
+  pv.pause(); pv.removeAttribute('src'); pv.load();
+  player.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('fecharPlayer').addEventListener('click', fechar);
+player.addEventListener('click', function(e){ if (e.target === player) fechar(); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && player.classList.contains('open')) fechar(); });
 for (var i = 0; i < 10; i++) {
-  var a = document.createElement('a');
-  a.className = 'dep'; a.href = ALBUM; a.target = '_blank'; a.rel = 'noopener';
+  var a = document.createElement('button');
+  a.type = 'button'; a.className = 'dep';
   a.setAttribute('aria-label', 'Assistir depoimento ' + (i + 1));
+  a.addEventListener('click', abrir.bind(null, i));
   var img = document.createElement('img');
   img.src = 'img/dep' + i + '.jpg'; img.alt = ''; img.loading = 'lazy';
   var p = document.createElement('span'); p.className = 'play';
