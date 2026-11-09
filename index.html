@@ -22,8 +22,8 @@
   --paper:#F3F1EE;
   --text:#E9EEF2;
   --muted:#9AA8B4;
-  --accent:#8EC1E6;
-  --accent-ink:#06121C;
+  --accent:#CDA85F;
+  --accent-ink:#1A1206;
   --tbd:#FFE36E;
   --radius:18px;
   --max:1120px;
@@ -43,8 +43,8 @@ section{padding:96px 0}
 .tbd{background:var(--tbd);color:#1a1400;border-radius:4px;padding:0 5px;font-weight:600;font-style:normal}
 
 /* botões */
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 30px rgba(142,193,230,.25)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(142,193,230,.4)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 30px rgba(205,168,95,.25)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(205,168,95,.4)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
 
 /* topo */
@@ -84,15 +84,15 @@ section{padding:96px 0}
 .objetivo{background:var(--paper);color:#111A22}
 .objetivo .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
 .objetivo h2{font-size:clamp(26px,3.4vw,38px)}
-.objetivo .serif{color:#1F6FA8}
+.objetivo .serif{color:#8C6A2A}
 .objetivo p{margin-top:18px;color:#3A4651;font-size:17px}
 .objetivo img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%}
-.objetivo .eyebrow{color:#1F6FA8}
+.objetivo .eyebrow{color:#8C6A2A}
 
 /* cards */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
 .card{background:linear-gradient(180deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);border-radius:var(--radius);padding:32px}
-.card .ico{width:44px;height:44px;border-radius:12px;background:rgba(142,193,230,.12);display:grid;place-items:center;margin-bottom:20px}
+.card .ico{width:44px;height:44px;border-radius:12px;background:rgba(205,168,95,.12);display:grid;place-items:center;margin-bottom:20px}
 .card .ico svg{width:22px;height:22px;color:var(--accent)}
 .card h3{font-size:21px}
 .card h3::after{content:"";display:block;width:36px;height:2px;background:var(--accent);margin:14px 0 14px;opacity:.6}
@@ -111,7 +111,7 @@ section{padding:96px 0}
 .mentor h3{font-size:19px}
 .mentor p{color:var(--muted);font-size:14.5px;margin-top:6px}
 
-.convidados{margin-top:20px;border:1px dashed rgba(142,193,230,.4);border-radius:var(--radius);padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(16,25,34,.6)}
+.convidados{margin-top:20px;border:1px dashed rgba(205,168,95,.4);border-radius:var(--radius);padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(16,25,34,.6)}
 .convidados p{color:var(--muted)}
 .convidados b{color:var(--text)}
 /* para quem */
@@ -155,15 +155,15 @@ section{padding:96px 0}
 .janeiro img{border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover}
 
 /* ingressos */
-.ingressos{background:radial-gradient(1200px 500px at 50% 0%,rgba(142,193,230,.12),transparent 70%),var(--ink)}
+.ingressos{background:radial-gradient(1200px 500px at 50% 0%,rgba(205,168,95,.12),transparent 70%),var(--ink)}
 .countdown{display:flex;justify-content:center;gap:12px;margin:28px 0 8px}
 .countdown div{min-width:78px;padding:14px 10px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);text-align:center}
 .countdown b{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em}
 .countdown small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .tickets{display:grid;grid-template-columns:1fr;gap:22px;margin-top:44px;max-width:560px;margin-left:auto;margin-right:auto}
 .ticket{border:1px solid var(--line);border-radius:22px;padding:36px 32px;background:linear-gradient(180deg,var(--ink-3),var(--ink-2));display:flex;flex-direction:column}
-.ticket.vip{border-color:rgba(142,193,230,.55);box-shadow:0 0 0 1px rgba(142,193,230,.2),0 30px 80px -30px rgba(142,193,230,.35)}
-.ticket .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(142,193,230,.14);color:var(--accent);padding:6px 10px;border-radius:999px;margin-bottom:18px}
+.ticket.vip{border-color:rgba(205,168,95,.55);box-shadow:0 0 0 1px rgba(205,168,95,.2),0 30px 80px -30px rgba(205,168,95,.35)}
+.ticket .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(205,168,95,.14);color:var(--accent);padding:6px 10px;border-radius:999px;margin-bottom:18px}
 .ticket h3{font-size:28px;font-weight:600}
 .ticket .desc{color:var(--muted);font-size:15px;margin:12px 0 22px}
 .ticket ul{list-style:none;display:grid;gap:10px;margin-bottom:28px;font-size:15px}
@@ -176,12 +176,12 @@ section{padding:96px 0}
 
 /* faq */
 .faq{background:var(--paper);color:#111A22}
-.faq .eyebrow{color:#1F6FA8}
+.faq .eyebrow{color:#8C6A2A}
 .faq-list{max-width:820px;margin:40px auto 0}
 .faq details{border-bottom:1px solid #D9D4CD;padding:20px 4px}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:17px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:24px;line-height:1;color:#1F6FA8;transition:transform .2s}
+.faq summary::after{content:"+";font-size:24px;line-height:1;color:#8C6A2A;transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{margin-top:12px;color:#3A4651}
 
@@ -192,7 +192,7 @@ footer a{text-decoration:none}
 footer a:hover{color:var(--text)}
 
 /* barra fixa */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,15,20,.92);backdrop-filter:blur(10px);border-top:1px solid rgba(142,193,230,.35);padding:12px 0;transform:translateY(110%);transition:transform .3s ease}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,15,20,.92);backdrop-filter:blur(10px);border-top:1px solid rgba(205,168,95,.35);padding:12px 0;transform:translateY(110%);transition:transform .3s ease}
 .sticky.show{transform:none}
 .sticky .wrap{display:flex;justify-content:center;align-items:center;gap:24px}
 .sticky .info{font-size:14px;color:var(--muted)}
@@ -474,7 +474,7 @@ footer a:hover{color:var(--text)}
       </details>
       <details>
         <summary>Onde fica o Lapidare?</summary>
-        <p>Rua Bento de Andrade, 638, Jardim Paulista, São Paulo (SP). <a href="https://www.google.com/maps/search/?api=1&query=Lapidare+For+Future+R.+Bento+de+Andrade+638+Jardim+Paulista+S%C3%A3o+Paulo" target="_blank" rel="noopener" style="color:#1F6FA8;font-weight:600">Ver no mapa</a>. É o mesmo espaço do OrtoGuide Summit de agosto de 2026.</p>
+        <p>Rua Bento de Andrade, 638, Jardim Paulista, São Paulo (SP). <a href="https://www.google.com/maps/search/?api=1&query=Lapidare+For+Future+R.+Bento+de+Andrade+638+Jardim+Paulista+S%C3%A3o+Paulo" target="_blank" rel="noopener" style="color:#8C6A2A;font-weight:600">Ver no mapa</a>. É o mesmo espaço do OrtoGuide Summit de agosto de 2026.</p>
       </details>
       <details>
         <summary>O que eu levo para casa no fim do dia?</summary>
