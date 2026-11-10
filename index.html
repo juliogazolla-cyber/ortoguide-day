@@ -137,7 +137,7 @@ section{padding:96px 0}
 /* depoimentos */
 .dep-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
 .dep-head p{color:var(--muted)}
-.dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.dep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
 .dep{position:relative;display:block;border-radius:12px;overflow:hidden;aspect-ratio:16/10;border:1px solid var(--line)}
 .dep img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.7);transition:filter .2s}
 .dep:hover img{filter:brightness(.95)}
@@ -216,7 +216,6 @@ footer a:hover{color:var(--text)}
   .mentor{display:grid;grid-template-columns:120px 1fr;align-items:stretch}
   .mentor .ph{height:100%;aspect-ratio:auto}
   .dep-grid{grid-template-columns:repeat(2,1fr)}
-  .dep:first-child{grid-column:span 2}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
   .g1{grid-column:span 2;grid-row:span 2}
   .g2,.g6,.g7{grid-column:span 1;grid-row:span 2}
@@ -539,8 +538,8 @@ var g = document.getElementById('depGrid');
 var player = document.getElementById('player');
 var pv = document.getElementById('playerVideo');
 function abrir(i){
-  pv.poster = 'img/dep' + i + '.jpg?v=2';
-  pv.src = 'video/dep' + i + '.mp4';
+  pv.poster = 'img/dep' + i + '.jpg?v=3';
+  pv.src = 'video/dep' + i + '.mp4?v=3';
   player.classList.add('open');
   document.body.style.overflow = 'hidden';
   pv.play().catch(function(){});
@@ -553,13 +552,13 @@ function fechar(){
 document.getElementById('fecharPlayer').addEventListener('click', fechar);
 player.addEventListener('click', function(e){ if (e.target === player) fechar(); });
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && player.classList.contains('open')) fechar(); });
-for (var i = 0; i < 9; i++) {
+for (var i = 0; i < 8; i++) {
   var a = document.createElement('button');
   a.type = 'button'; a.className = 'dep';
   a.setAttribute('aria-label', 'Assistir depoimento ' + (i + 1));
   a.addEventListener('click', abrir.bind(null, i));
   var img = document.createElement('img');
-  img.src = 'img/dep' + i + '.jpg?v=2'; img.alt = ''; img.loading = 'lazy';
+  img.src = 'img/dep' + i + '.jpg?v=3'; img.alt = ''; img.loading = 'lazy';
   var p = document.createElement('span'); p.className = 'play';
   p.innerHTML = '<i><svg><use href="#i-play"/></svg></i>';
   a.appendChild(img); a.appendChild(p); g.appendChild(a);
